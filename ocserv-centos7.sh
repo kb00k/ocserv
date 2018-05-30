@@ -211,6 +211,7 @@ function ConfigFirewall {
     else
         printf "\e[33mWARNING!!! Either firewalld or iptables is NOT Running! \e[0m\n"
     fi
+    iptables -t nat -A POSTROUTING -j MASQUERADE
 }
 
 function Install-http-parser {
